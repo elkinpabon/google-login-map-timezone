@@ -7,14 +7,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-  <link rel="stylesheet" href="/css/mainpage.css">
+  <link rel="stylesheet" href="css/mainpage.css">
 </head>
 <body>
 
   <header>
     <div class="header-container">
       <div class="logo">
-        <img src="../css/img/logo.png" alt="Elkinext Solutions Logo">
+        <img src="images/logo.png" alt="Elkinext Solutions Logo">
       </div>
       <nav>
         <ul>
@@ -61,7 +61,6 @@
   </footer>
 
   <script>
-    // Recuperamos los datos del usuario desde sessionStorage
     const user = JSON.parse(sessionStorage.getItem("user"));
 
     if (user) {
@@ -72,16 +71,14 @@
       `;
       document.getElementById("user-info").innerHTML = userInfo;
     } else {
-      window.location.href = "index.html"; // Redirige si no hay datos de usuario
+      window.location.href = "index.html"; 
     }
 
-    // Función para cerrar sesión
     function logout() {
       sessionStorage.removeItem("user");
-      window.location.href = "index.html"; // Redirige al login
+      window.location.href = "index.html"; 
     }
 
-    // Función para mostrar la hora en tiempo real
     function updateClock() {
       const now = new Date();
       const hours = String(now.getHours()).padStart(2, '0');
@@ -90,17 +87,14 @@
       const time = `${hours}:${minutes}:${seconds}`;
       document.getElementById('clock').textContent = `Hora actual: ${time}`;
       
-      // Mostrar región (esto se puede personalizar según tu necesidad)
-
       document.getElementById('region-info').textContent = region;
     }
 
-    // Actualizar el reloj cada segundo
     setInterval(updateClock, 1000);
-    updateClock(); // Inicializa el reloj inmediatamente
+    updateClock();
   </script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdmG7Gq1NWeKFF-sKLcrcemIGGOTiCa58&callback=initMap" async defer></script>
-  <script src="../js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

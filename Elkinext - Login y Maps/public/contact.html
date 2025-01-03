@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto - Elkinext Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/contact.css">
+  <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <header>
     <div class="header-container">
       <div class="logo">
-        <img src="../css/img/logo.png" alt="Elkinext Solutions Logo">
+        <img src="images/logo.png" alt="Elkinext Solutions Logo">
       </div>
       <nav>
         <ul>
@@ -49,21 +49,16 @@
   </footer>
 
   <script>
-    // Obtener los datos del usuario desde sessionStorage
     const user = JSON.parse(sessionStorage.getItem("user"));
-
-    // Verificar si el usuario está autenticado (si los datos existen en sessionStorage)
     if (!user) {
-      // Si no hay datos de usuario, redirigir a la página de inicio (login)
       window.location.href = "index.html";
     } else {
-      // Si el usuario está autenticado, mostrar la información del usuario en la página de contacto
       const userInfo = `
         <h2>Hola, ${user.name}</h2>
         <img src="${user.picture}" alt="${user.name}" style="border-radius: 50%; width: 100px; height: 100px;">
         <p>Email: ${user.email}</p>
       `;
-      document.getElementById("user-info").innerHTML = userInfo; // Asegúrate de tener un contenedor con id="user-info"
+      document.getElementById("user-info").innerHTML = userInfo;
     }
   </script>
 </body>
