@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina Principal - Bienvenido</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <link rel="stylesheet" href="/css/mainpage.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="../css/img/logo.png" alt="Elkinext Solutions Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="time-region-container">
+      <div id="clock" class="clock"></div>
+      <div id="region-info" class="region-info"></div>
+      <div id="map"></div>
+  </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h1>Bienvenido</h1>
+        <p>Has iniciado sesión con Google</p>
+      </div>
+      <div class="card-body">
+        <div id="user-info"></div>
+        <button onclick="logout()">Cerrar sesión</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <p>&copy; 2025 Elkinext Solutions. Todos los derechos reservados.</p>
+        <nav>
+        </nav>
+      </div>
+      <div class="footer-social">
+        <ul>
+          <li><a href="https://www.facebook.com/elkin.pabon.583" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="https://www.instagram.com/andrespabon103/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://github.com/elkinpabon" target="_blank" class="social-icon"><i class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Recuperamos los datos del usuario desde sessionStorage
+    const user = JSON.parse(sessionStorage.getItem("user"));
+
+    if (user) {
+      const userInfo = `
+        <h2>Hola, ${user.name}</h2>
+        <img src="${user.picture}" alt="${user.name}" style="border-radius: 50%; width: 100px; height: 100px;">
+        <p>Email: ${user.email}</p>
+      `;
+      document.getElementById("user-info").innerHTML = userInfo;
+    } else {
+      window.location.href = "index.html"; // Redirige si no hay datos de usuario
+    }
+
+    // Función para cerrar sesión
+    function logout() {
+      sessionStorage.removeItem("user");
+      window.location.href = "index.html"; // Redirige al login
+    }
+
+    // Función para mostrar la hora en tiempo real
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const time = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('clock').textContent = `Hora actual: ${time}`;
+      
+      // Mostrar región (esto se puede personalizar según tu necesidad)
+
+      document.getElementById('region-info').textContent = region;
+    }
+
+    // Actualizar el reloj cada segundo
+    setInterval(updateClock, 1000);
+    updateClock(); // Inicializa el reloj inmediatamente
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdmG7Gq1NWeKFF-sKLcrcemIGGOTiCa58&callback=initMap" async defer></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Elkinext Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="../css/img/logo.png" alt="Elkinext Solutions Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="mainpage.html">Inicio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-info">
+      <h1>Informacion de Contacto</h1>
+      <p>Si tienes alguna duda o inquietud, no dudes en contactarme!</p>
+      <div class="contact-details">
+        <p><strong>Email:</strong> <a href="mailto:elkindres2@gmail.com">elkindres2@gmail.com</a></p>
+        <p><strong>Teléfono:</strong> <a href="tel:+593995473517">0995473517</a></p>
+      </div>
+
+      <h2>Sígueme en mis redes sociales:</h2>
+      <div class="social-media">
+        <ul>
+          <li><a href="https://www.facebook.com/elkin.pabon.583" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="https://www.instagram.com/andrespabon103/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://github.com/elkinpabon" target="_blank" class="social-icon"><i class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Elkinext Solutions. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Obtener los datos del usuario desde sessionStorage
+    const user = JSON.parse(sessionStorage.getItem("user"));
+
+    // Verificar si el usuario está autenticado (si los datos existen en sessionStorage)
+    if (!user) {
+      // Si no hay datos de usuario, redirigir a la página de inicio (login)
+      window.location.href = "index.html";
+    } else {
+      // Si el usuario está autenticado, mostrar la información del usuario en la página de contacto
+      const userInfo = `
+        <h2>Hola, ${user.name}</h2>
+        <img src="${user.picture}" alt="${user.name}" style="border-radius: 50%; width: 100px; height: 100px;">
+        <p>Email: ${user.email}</p>
+      `;
+      document.getElementById("user-info").innerHTML = userInfo; // Asegúrate de tener un contenedor con id="user-info"
+    }
+  </script>
+</body>
+</html>

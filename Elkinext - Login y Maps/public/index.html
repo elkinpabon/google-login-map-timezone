@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ELKINEXT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="/js/main.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="../css/img/logo.png" alt="Logo de Elkinext Solutions" class="logo-img">
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h1>Iniciar sesión</h1>
+        <p>Accede fácilmente con tu cuenta de Google</p>
+      </div>
+      <div class="card-body">
+        <div id="g_id_onload"
+             data-client_id="884062258219-hpioso37i4e708l49isbosh1oa8ubmv6.apps.googleusercontent.com"
+             data-context="signin"
+             data-ux_mode="popup"
+             data-callback="handleCredentialResponse"
+             data-auto_prompt="false">
+        </div>
+        <div class="g_id_signin"
+             data-type="standard"
+             data-size="large"
+             data-theme="outline"
+             data-text="signin_with"
+             data-shape="pill"
+             data-logo_alignment="left">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins';
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    background: #f1f1f1;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Contenedor para la hora y la región */
+.time-region-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1; 
+    border: 2px solid #ff164e; 
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-left: 150px;
+}
+
+/* Estilo para el reloj */
+.clock {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ff164e;
+}
+
+/* Estilo para la región */
+.region-info {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Estilo para el header */
+header {
+    background-color: linear-gradient(to bottom right, #fcd6df, #ff164e);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-container .logo img {
+    max-width: 250px;
+    height: auto;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el footer */
+footer {
+    background-color: #ff164e;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info {
+    flex: 1;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer nav ul li {
+    margin-left: 20px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para los iconos de redes sociales */
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-social ul li {
+    margin: 0 15px;
+}
+
+.footer-social ul li a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social ul li a:hover {
+    color: #f0f0f0;
+}
+
+/* Tarjeta de usuario */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 0px;
+    margin-right: 150px;
+}
+
+.card-header {
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #ff164e;
+    color: #fff;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff164e;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e0143e;
+}
+
+#user-info h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+#user-info img {
+    margin-top: 10px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+#user-info p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* RESPONSIVE Para pantallas de hasta 768px */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Los contenedores se apilan verticalmente */
+        align-items: center; /* Centra los elementos */
+        padding: 10px;
+    }
+
+    .time-region-container {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%; /* El contenedor de la hora ocupa todo el ancho */
+        margin-bottom: 15px;
+    }
+
+    .card {
+        margin-right: 0;
+        margin-left: 0;
+        max-width: 100%; /* El contenedor de la tarjeta ocupa todo el ancho */
+        margin-bottom: 15px;
+    }
+
+    .header-container {
+        flex-direction: column; /* Los elementos se apilan en pantallas pequeñas */
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Los enlaces de navegación se apilan */
+        margin-top: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column; /* El contenido del footer se apila */
+        align-items: center;
+    }
+
+    .footer-social ul {
+        flex-direction: column; /* Los íconos de redes sociales se apilan */
+    }
+}
+
+/* Para pantallas de hasta 480px */
+@media (max-width: 480px) {
+    .clock {
+        font-size: 1.5rem; /* Reduce el tamaño del reloj en pantallas más pequeñas */
+    }
+
+    .region-info {
+        font-size: 1rem; /* Ajusta el tamaño de la región */
+    }
+
+    button {
+        font-size: 0.9rem; /* Ajusta el tamaño del botón */
+    }
+}
+
+
+/* Contenedor del mapa */
+#map {
+    height: 400px; /* Tamaño del mapa */
+    width: 100%; /* Ocupa todo el ancho */
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+  

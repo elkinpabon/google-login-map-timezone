@@ -1,0 +1,143 @@
+/* Estilo general del body */
+body {
+  font-family: 'Poppins';
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #fc1e52);
+
+  flex-direction: column; /* Centra los elementos en dispositivos móviles */
+}
+
+/* Contenedor general */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Logo de la empresa */
+.logo {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo-img {
+  max-width: 200px; /* Asegura que el logo no sea demasiado grande */
+  height: auto;
+}
+
+/* Estilo de la tarjeta de login */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #f9f9f9;
+}
+
+.card-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.card-header p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #666;
+  margin: 8px 0 0;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.user-info {
+  margin-top: 20px;
+}
+
+.user-info h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.user-info img {
+  margin-top: 10px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border: 2px solid #007bff;
+}
+
+.user-info p {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* MEDIA QUERIES PARA ADAPTAR EL DISEÑO A PANTALLAS PEQUEÑAS */
+
+/* Para pantallas de hasta 768px */
+@media (max-width: 768px) {
+  .logo-img {
+    max-width: 180px; /* Reducir el tamaño del logo en pantallas más pequeñas */
+  }
+
+  .card {
+    width: 90%; /* Hace que la tarjeta ocupe un poco más de espacio en pantallas medianas */
+  }
+
+  .card-header h1 {
+    font-size: 1.5rem; /* Reducir tamaño de fuente */
+  }
+
+  .card-header p {
+    font-size: 1rem; /* Reducir tamaño de fuente */
+  }
+
+  .g_id_signin {
+    width: 100%; /* Ajustar el tamaño del botón de Google */
+  }
+}
+
+/* Para pantallas de hasta 480px */
+@media (max-width: 480px) {
+  .logo-img {
+    max-width: 150px; /* Reducir aún más el tamaño del logo */
+  }
+
+  .card {
+    width: 90%; /* Asegura que la tarjeta ocupe el 90% del ancho en pantallas muy pequeñas */
+    padding: 15px;
+  }
+
+  .card-header h1 {
+    font-size: 1.3rem; /* Ajuste para pantallas pequeñas */
+  }
+
+  .card-header p {
+    font-size: 0.9rem;
+  }
+
+  .g_id_signin {
+    width: 100%;
+  }
+}
