@@ -1,10 +1,16 @@
 function handleCredentialResponse(response) {
     const data = jwt_decode(response.credential);
-  
+    
+    // Limpiar la sesión anterior si existe
+    sessionStorage.removeItem("user");
+
+    // Guardar los nuevos datos del usuario
     sessionStorage.setItem("user", JSON.stringify(data));
-  
+
+    // Redirigir a la página principal
     window.location.href = "mainpage.html";
-  }
+}
+
   
   //JWT Decode
   const script = document.createElement('script');
