@@ -23,8 +23,9 @@
   </header>
 
   <main>
+
     <section class="contact-info">
-      <h1>Informacion de Contacto</h1>
+      <h1>Información de Contacto</h1>
       <p>Si tienes alguna duda o inquietud, no dudes en contactarme!</p>
       <div class="contact-details">
         <p><strong>Email:</strong> <a href="mailto:elkindres2@gmail.com">elkindres2@gmail.com</a></p>
@@ -50,9 +51,12 @@
 
   <script>
     const user = JSON.parse(sessionStorage.getItem("user"));
+
     if (!user) {
+      // Redirigir al usuario a la página de inicio de sesión si no está autenticado.
       window.location.href = "index.html";
     } else {
+      // Mostrar la información del usuario autenticado.
       const userInfo = `
         <h2>Hola, ${user.name}</h2>
         <img src="${user.picture}" alt="${user.name}" style="border-radius: 50%; width: 100px; height: 100px;">

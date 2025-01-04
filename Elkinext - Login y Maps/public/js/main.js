@@ -38,7 +38,7 @@ function initMap() {
 
 function getLocalTime(lat, lng) {
     const apiKey = 'NZCA0WCK4DFQ'; 
-    const url = `http://api.timezonedb.com/v2.1/get-time-zone?key=${apiKey}&format=json&by=position&lat=${lat}&lng=${lng}`;
+    const url = `https://api.timezonedb.com/v2.1/get-time-zone?key=${apiKey}&format=json&by=position&lat=${lat}&lng=${lng}`;
 
     fetch(url)
         .then((response) => response.json())
@@ -71,4 +71,5 @@ function getLocalTime(lat, lng) {
             document.getElementById("region-info").innerText = "No se pudo obtener la hora local.";
         });
 }
+
 
